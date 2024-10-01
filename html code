@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pong Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        code {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Código de Mi Pong Game</h1>
+
+    <p>A continuación se muestra el código fuente del videojuego Pong Game que programé:</p>
+
+    <pre><code>
+// Aquí puedes insertar tu código de Pong Game
+// Ejemplo de código en JavaScript para Pong
+var canvas = document.getElementById("pongCanvas");
+var context = canvas.getContext("2d");
+
+// Variables del juego
+var x = canvas.width / 2;
+var y = canvas.height - 30;
+var dx = 2;
+var dy = -2;
+var paddleHeight = 10;
+var paddleWidth = 75;
+var paddleX = (canvas.width - paddleWidth) / 2;
+
+// Función de dibujo del juego
+function drawBall() {
+    context.beginPath();
+    context.arc(x, y, 10, 0, Math.PI*2);
+    context.fillStyle = "#0095DD";
+    context.fill();
+    context.closePath();
+}
+
+function draw() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+    x += dx;
+    y += dy;
+}
+
+setInterval(draw, 10);
+    </code></pre>
+
+</body>
+</html>
